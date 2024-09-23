@@ -17,5 +17,7 @@
 # include <stdlib.h>
 
 size_t ft_strlen(const char *str);
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
 
 #endif
