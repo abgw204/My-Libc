@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isascii.c                                          :+:      :+:    :+:   */
+/*   toupper.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 13:02:17 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/23 14:43:34 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/09/23 14:59:18 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/09/23 15:07:25 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+int	ft_toupper(int ch)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	if (ch >= 97 && ch <= 122)
+		ch = ch - 32;
+	return (ch);
 }
 /*#include <stdio.h>
 int main()
 {
-	printf("%d", ft_isascii(128));
+	printf("%c", ft_toupper('a'));
 }*/

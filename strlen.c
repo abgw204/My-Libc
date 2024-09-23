@@ -6,11 +6,11 @@
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 13:03:12 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/23 13:03:14 by gada-sil         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:27:20 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+unsigned long	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -22,5 +22,5 @@ int	ft_strlen(const char *str)
 /*#include <stdio.h>
 int main()
 {
-	printf("%d\n", ft_strlen("oieeee"));
+	printf("%d\n", ft_strlen("hello"));
 }*/

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isascii.c                                          :+:      :+:    :+:   */
+/*   tolower.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 13:02:17 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/23 14:43:34 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/09/23 15:07:54 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/09/23 15:22:52 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+int	ft_tolower(int c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	if (c >= 65 && c <= 90)
+		c = c + 32;
+	return (c);
 }
-/*#include <stdio.h>
-int main()
+#include <stdio.h>
+int	main()
 {
-	printf("%d", ft_isascii(128));
-}*/
+	printf("%c", ft_tolower('M'));
+}
