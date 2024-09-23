@@ -6,11 +6,13 @@
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 13:03:12 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/23 15:27:20 by gada-sil         ###   ########.fr       */
+/*   Updated: 2024/09/23 16:17:05 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_strlen(const char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -22,5 +24,5 @@ unsigned long	ft_strlen(const char *str)
 /*#include <stdio.h>
 int main()
 {
-	printf("%d\n", ft_strlen("hello"));
+	printf("%zu\n", ft_strlen("hello"));
 }*/
