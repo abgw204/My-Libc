@@ -6,7 +6,7 @@
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:07:54 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/23 15:22:52 by gada-sil         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:15:34 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	ft_tolower(int c)
 		c = c + 32;
 	return (c);
 }
-#include <stdio.h>
+/*#include <stdio.h>
 int	main()
 {
 	printf("%c", ft_tolower('M'));
-}
+}*/
