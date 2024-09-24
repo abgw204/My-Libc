@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strdup.c                                           :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 15:40:18 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/24 14:19:20 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/09/18 12:35:27 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/09/18 12:35:32 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	char	*ptr;
-	int		i;
+	unsigned int	i;
 
-	ptr = malloc(ft_strlen(src) * sizeof(char));
 	i = 0;
-	if (ptr == NULL)
-		return (NULL);
-	while (src[i])
+	while (src[i] != '\0' && i < size)
 	{
-		ptr[i] = src[i];
+		dest[i] = src[i];
 		i++;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	dest[i] = '\0';
+	return (ft_strlen(src));
 }
-/*#include <stdio.h>
-int    main(void)
+#include <stdio.h>
+int	main(void)
 {
-	char    src[] = "HELLO0000000.";
-
-	printf("%s", ft_strdup(src));
-}*/
+	char src[] = "Hello World";
+	char dest[15];
+	ft_strlcpy(dest, src, 5);
+	printf("%d\n", ft_strlcpy(dest, src, 5));
+	printf("%s", dest);
+}

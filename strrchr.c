@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strdup.c                                           :+:      :+:    :+:   */
+/*   strrchr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 15:40:18 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/24 14:19:20 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/09/24 14:25:11 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/09/24 14:31:22 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strdup(const char *src)
+char	*ft_strrchr(const char *str, int c)
 {
-	char	*ptr;
-	int		i;
-
-	ptr = malloc(ft_strlen(src) * sizeof(char));
-	i = 0;
-	if (ptr == NULL)
-		return (NULL);
-	while (src[i])
+	while (*str)
+		str++;
+	str--;
+	while (*str)
 	{
-		ptr[i] = src[i];
-		i++;
+		if (*str == c)
+			return ((char *)str);
+		str--;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	return (0);
 }
 /*#include <stdio.h>
-int    main(void)
+int	main(void)
 {
-	char    src[] = "HELLO0000000.";
-
-	printf("%s", ft_strdup(src));
+	printf("%s", ft_strrchr("iiiiii.oooooo.aaaaaaa.ppppp", '.'));
 }*/
