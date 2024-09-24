@@ -16,4 +16,23 @@ char	*ft_strnstr(const char *big, char *little, size_t size)
 {
 	size_t	i;
 	size_t	k;
+
+	i = 0;
+	while (big[i] != '\0')
+	{
+		k = 0;
+		while (big[i + k] == little[k] && little[k] != '\0')
+		{
+			if (little[k] == '\0')
+				return ((char *)(big + i));
+			k++;
+		}
+		i++;
+	}
+	return (NULL);
+}
+#include <stdio.h>
+int main()
+{
+	printf("%s", ft_strnstr("teste123", "st", 7));
 }
