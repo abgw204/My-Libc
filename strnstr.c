@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   strnstr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 13:03:12 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/24 16:37:23 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/09/24 15:38:02 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/09/24 15:57:59 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strnstr(const char *big, char *little, size_t size)
 {
 	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	size_t	k;
 }
-/*#include <stdio.h>
-int main()
-{
-	printf("%zu\n", ft_strlen("hello"));
-}*/

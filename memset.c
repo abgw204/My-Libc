@@ -6,7 +6,7 @@
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:36:05 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/24 12:31:14 by gada-sil         ###   ########.fr       */
+/*   Updated: 2024/09/24 16:05:35 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int main()
 {
 	int s[4] = {1, 2, 3, 4};
 	char s1[4];
-	ft_memset(s, 'c', 4);
-	ft_memset(s1, 'c', 4);
+	ft_memset(s, 0, 4);
+	ft_memset(s1, 0, 4);
 	printf("%s\n", s1);
 	printf("%d, %d, %d, %d", s[0], s[1], s[2], s[3]);
 }

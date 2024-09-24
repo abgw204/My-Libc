@@ -6,7 +6,7 @@
 #    By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/23 19:35:00 by gada-sil          #+#    #+#              #
-#    Updated: 2024/09/24 14:31:48 by gada-sil         ###   ########.fr        #
+#    Updated: 2024/09/24 17:03:27 by gada-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,11 @@ FUNCTIONS = strdup.c strlen.c strncmp.c isprint.c tolower.c isalpha.c isdigit.c
 OBJS = strdup.o strlen.o strncmp.o isprint.o tolower.o isalpha.o isdigit.o
 FUNCTIONS1 = toupper.c isascii.c atoi.c isalnum.c strchr.c strlcpy.c strrchr.c
 OBJS1 = toupper.o isascii.o atoi.o isalnum.o strchr.o strlcpy.o strrchr.o
+NAME = libft
 
-all: libft
+all: $(NAME)
 
-libft: $(OBJS) $(OBJS1)
+$(NAME): $(OBJS) $(OBJS1)
 	@echo "EXECUTABLE CREATED :)"
 	@cc $(FLAGS) $(OBJS) $(OBJS1) -o libft
 
@@ -28,4 +29,8 @@ OBJS: $(FUNCTIONS) $(FUNCTIONS)
 OBJS1: $(FUNCTIONS) $(FUNCTIONS1)
 	cc $(FLAGS) -c $(FUNCTIONS1)
 clean:
-	rm $(OBJS) $(OBJS1) libft
+	rm $(OBJS) $(OBJS1)
+
+fclean:
+	rm $(OBJS) $(OBJS1) $(NAME)
+re: fclean all
