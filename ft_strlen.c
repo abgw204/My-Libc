@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strdup.c                                           :+:      :+:    :+:   */
+/*   strlen.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 15:40:18 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/23 15:55:58 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/09/23 13:03:12 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/09/24 16:37:23 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+size_t	ft_strlen(const char *str)
 {
-	char	*ptr;
-	int		i;
+	size_t	i;
 
-	ptr = malloc(ft_strlen(src) * sizeof(char));
 	i = 0;
-	if (ptr == NULL)
-		return (NULL);
-	while (src[i])
-	{
-		ptr[i] = src[i];
+	while (str[i])
 		i++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
+	return (i);
 }
-#include <stdio.h>
-int    main(void)
+/*#include <stdio.h>
+int main()
 {
-	char    src[] = "HELLO0000000.";
-
-	printf("%s", ft_strdup(src));
-}
+	printf("%zu\n", ft_strlen("hello"));
+}*/

@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   strrchr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 15:34:05 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/24 11:09:24 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/09/24 14:25:11 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/09/24 14:31:22 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-# include <string.h>
-# include <stdlib.h>
-
-size_t ft_strlen(const char *str);
-
-int	ft_isalpha(int c);
-
-int	ft_isdigit(int c);
-
-size_t	ft_strlen(const char *str);
-
-int	ft_isdigit(int c);
-
-int	ft_isalpha(int c);
-
-#endif
+char	*ft_strrchr(const char *str, int c)
+{
+	while (*str)
+		str++;
+	str--;
+	while (*str)
+	{
+		if (*str == c)
+			return ((char *)str);
+		str--;
+	}
+	return (0);
+}
+/*#include <stdio.h>
+int	main(void)
+{
+	printf("%s", ft_strrchr("iiiiii.oooooo.aaaaaaa.ppppp", '.'));
+}*/

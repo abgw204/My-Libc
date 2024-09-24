@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
+/*   bzero.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 13:01:37 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/23 13:01:40 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/09/24 11:43:18 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/09/24 12:18:19 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	res;
-	int	sign;
+#include "libft.h"
 
-	res = 0;
-	sign = 1;
-	while (*str == ' ')
-		str++;
-	if (!(*str >= '0' && *str <= '9'))
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
 	{
-		if (*str == '-')
-			sign = -1;
-		else if (*str != '+')
-			return (0);
-		str++;
+		*((char *)s) = 0;
+		i++;
+		if (i != n)
+		s++;
 	}
-	while (*str >= '0' && *str <= '9')
-		res = res * 10 + (*str++ - 48);
-	return (res * sign);
 }
 /*#include <stdio.h>
-#include <stdlib.h>
 int main()
 {
-	printf("%d\n", ft_atoi("+76"));
-	printf("%d", atoi("+76"));
+	char s[20];
+	ft_bzero(s, 20);
+	printf("%s", s);
 }*/

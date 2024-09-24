@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   strchr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 15:34:05 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/24 11:09:24 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/09/24 11:21:26 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/09/24 11:31:22 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-# include <string.h>
-# include <stdlib.h>
-
-size_t ft_strlen(const char *str);
-
-int	ft_isalpha(int c);
-
-int	ft_isdigit(int c);
-
-size_t	ft_strlen(const char *str);
-
-int	ft_isdigit(int c);
-
-int	ft_isalpha(int c);
-
-#endif
+char	*ft_strchr(const char *s1, int c)
+{
+	while (*s1)
+	{
+		if (*s1 == c)
+			return (char *)s1;
+		s1++;
+	}
+	if ((char)c == '\0')
+		return ((char *)s1);
+	return (0);
+}
+/*#include <stdio.h>
+int main()
+{
+	char *s1 = "Hi, my name is kyle";
+	printf("%s", ft_strchr(s1, 'n'));
+}*/

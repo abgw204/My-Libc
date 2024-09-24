@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   memset.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 15:34:05 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/24 11:09:24 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/09/24 11:36:05 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/09/24 16:05:35 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <string.h>
-# include <stdlib.h>
+void	*ft_memset(void *s, int c, size_t n)
+{
+	size_t    i;
 
-size_t ft_strlen(const char *str);
-
-int	ft_isalpha(int c);
-
-int	ft_isdigit(int c);
-
-size_t	ft_strlen(const char *str);
-
-int	ft_isdigit(int c);
-
-int	ft_isalpha(int c);
-
-#endif
+	i = 0;
+	while (i < n)
+	{
+		*((char *)s) = c;
+		i++;
+		if (i != n)
+		s++;
+	}
+	return (s);
+}
+#include <stdio.h>
+int main()
+{
+	int s[4] = {1, 2, 3, 4};
+	char s1[4];
+	ft_memset(s, 0, 4);
+	ft_memset(s1, 0, 4);
+	printf("%s\n", s1);
+	printf("%d, %d, %d, %d", s[0], s[1], s[2], s[3]);
+}

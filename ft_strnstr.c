@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tolower.c                                          :+:      :+:    :+:   */
+/*   strnstr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 15:07:54 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/23 15:22:52 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/09/24 15:38:02 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/09/24 15:57:59 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+char	*ft_strnstr(const char *big, char *little, size_t size)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
-}
-#include <stdio.h>
-int	main()
-{
-	printf("%c", ft_tolower('M'));
+	size_t	i;
+	size_t	k;
 }
