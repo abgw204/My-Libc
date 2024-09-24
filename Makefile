@@ -6,15 +6,15 @@
 #    By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/23 19:35:00 by gada-sil          #+#    #+#              #
-#    Updated: 2024/09/24 11:18:34 by gada-sil         ###   ########.fr        #
+#    Updated: 2024/09/24 11:31:55 by gada-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FLAGS = -Wall -Wextra -Werror
 FUNCTIONS = strdup.c strlen.c strncmp.c isprint.c tolower.c isalpha.c isdigit.c
 OBJS = strdup.o strlen.o strncmp.o isprint.o tolower.o isalpha.o isdigit.o
-FUNCTIONS1 = toupper.c isascii.c atoi.c isalnum.c
-OBJS1 = toupper.o isascii.o atoi.o isalnum.o
+FUNCTIONS1 = toupper.c isascii.c atoi.c isalnum.c strchr.c
+OBJS1 = toupper.o isascii.o atoi.o isalnum.o strchr.o
 
 all: libft
 
