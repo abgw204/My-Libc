@@ -27,7 +27,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	dest[i] = '\0';
 	return (ft_strlen(src));
 }
-#include <stdio.h>
+/*#include <stdio.h>
 #include <bsd/string.h>
 int	main(void)
 {
@@ -41,4 +41,4 @@ int	main(void)
 	printf("%zu\n", strlcpy(dest2, src, 5));
 
 	printf("%s\n", dest2);
-}
+}*/

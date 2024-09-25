@@ -31,8 +31,9 @@ char	*ft_strnstr(const char *big, char *little, size_t size)
 	}
 	return (NULL);
 }
-/*#include <stdio.h>
+#include <stdio.h>
 int main()
 {
-	printf("%s", ft_strnstr("aaastaaaastaaaaateste123", "st", 3));
-}*/
+	printf("%s", ft_strnstr("aaastaaaastaaaaateste123", "sta", 4));
+	printf("%s", strnstr("aaastaaaastaaaaateste123", "sta", 4));
+}
