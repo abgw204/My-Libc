@@ -6,7 +6,7 @@
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:36:05 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/25 13:30:33 by gada-sil         ###   ########.fr       */
+/*   Updated: 2024/09/25 14:10:44 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-#/*include <stdio.h>
+/*#include <stdio.h>
 int main()
 {
 	int s[4] = {1, 2, 3, 4};

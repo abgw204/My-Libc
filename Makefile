@@ -6,7 +6,7 @@
 #    By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/23 19:35:00 by gada-sil          #+#    #+#              #
-#    Updated: 2024/09/25 14:07:44 by gada-sil         ###   ########.fr        #
+#    Updated: 2024/09/25 14:41:01 by gada-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,9 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME): $(OBJS) $(OBJS1)
-	@echo "EXECUTABLE CREATED :)"
-	ar -rc $(NAME) $(OBJS) $(OBJS1)
+	@clear
+	@echo "Library Created :)"
+	@ar -rc $(NAME) $(OBJS) $(OBJS1)
 
 OBJS: $(FUNCTIONS) $(FUNCTIONS)
 	cc $(FLAGS) -c $(FUNCTIONS)
@@ -29,8 +30,8 @@ OBJS: $(FUNCTIONS) $(FUNCTIONS)
 OBJS1: $(FUNCTIONS) $(FUNCTIONS1)
 	cc $(FLAGS) -c $(FUNCTIONS1)
 clean:
-	rm $(OBJS) $(OBJS1)
+	@rm $(OBJS) $(OBJS1)
 
 fclean:
-	rm $(OBJS) $(OBJS1) $(NAME)
+	@rm $(OBJS) $(OBJS1) $(NAME)
 re: fclean all
