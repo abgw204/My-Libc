@@ -21,7 +21,6 @@ void	ft_bzero(void *s, size_t n)
 	{
 		*((char *)s) = 0;
 		i++;
-		if (i != n)
 		s++;
 	}
 }
