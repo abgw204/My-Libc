@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strnstr.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 15:38:02 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/24 15:57:59 by gada-sil         ###   ########.fr       */
+/*   Updated: 2024/09/25 12:09:55 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *big, char *little, size_t size)
 	size_t	k;
 
 	i = 0;
-	while (big[i] != '\0')
+	while (big[i] != '\0' && i < size)
 	{
 		k = 0;
 		while (big[i + k] == little[k] || little[k] == '\0')
@@ -31,8 +31,8 @@ char	*ft_strnstr(const char *big, char *little, size_t size)
 	}
 	return (NULL);
 }
-#include <stdio.h>
+/*#include <stdio.h>
 int main()
 {
-	printf("%s", ft_strnstr("teste123", "st", 7));
-}
+	printf("%s", ft_strnstr("aaastaaaastaaaaateste123", "st", 3));
+}*/
