@@ -18,13 +18,17 @@ static char	*ft_int_min_and_0_fix(int n)
 
 	if (n == 0)
 	{
-		str = malloc(2);
+		str = (char *)malloc(2);
+		if (!str)
+			return (NULL);
 		str[0] = '0';
 		str[1] = '\0';
 	}
 	else
 	{
 		str = (char *)malloc(12);
+		if (!str)
+			return (NULL);
 		ft_strlcpy(str, "-2147483648\0", 12);
 	}
 	return (str);
@@ -57,7 +61,7 @@ static char	*ft_reverse(char *str, int len)
 
 	i = 0;
 	len -= 1;
-	if (str[i] == '0')
+	if (str[i] == '0' || str == NULL)
 		return (str);
 	while (i < len)
 	{
@@ -70,20 +74,11 @@ static char	*ft_reverse(char *str, int len)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+void	ft_transform(char *str, int n, int nbr)
 {
-	char    *str;
-	int		nbr;
-	int		len;
-	int		i;
+	int	i;
 
-	nbr = n;
 	i = 0;
-	len = ft_intlen_with_sign(n);
-	if (n == -2147483648 || n == 0)
-		return (ft_int_min_and_0_fix(n));
-	else if (n != 0)
-		str = (char *)malloc(len + 1);
 	if (n < 0)
 		n *= -1;
 	while (n > 0)
@@ -94,17 +89,35 @@ char	*ft_itoa(int n)
 	if (nbr < 0)
 		str[i++] = '-';
 	str[i] = '\0';
+}
+char	*ft_itoa(int n)
+{
+	char    *str;
+	int		nbr;
+	int		len;
+
+	nbr = n;
+	len = ft_intlen_with_sign(n);
+	if (n == -2147483648 || n == 0)
+		return (ft_int_min_and_0_fix(n));
+	else if (n != 0)
+	{
+		str = (char *)malloc(len + 1);
+		if (!str)
+			return (NULL);
+	}
+	ft_transform(str, n, nbr);
 	ft_reverse(str, len);
 	return (str);
 }
-#include <stdio.h>
+/*#include <stdio.h>
 int    main()
 {
 	printf("%s\n", ft_itoa(-3123138));
-	printf("%s\n", ft_itoa(323023013));
+	printf("%s\n", ft_itoa(2147483647));
 	printf("%s\n", ft_itoa(0));
 	printf("%s\n", ft_itoa(-1));
 	printf("%s\n", ft_itoa(42));
 	printf("%s\n", ft_itoa(231));
-	printf("%s\n", ft_itoa(1371));
-}
+	printf("%s\n", ft_itoa(-2147483648));
+}*/
