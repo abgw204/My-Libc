@@ -6,18 +6,27 @@
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 12:45:05 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/27 17:02:02 by gada-sil         ###   ########.fr       */
+/*   Updated: 2024/09/27 17:15:14 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_int_min_fix(void)
+static char	*ft_int_min_and_0_fix(int n)
 {
 	char	*str;
 
-	str = (char *)malloc(12);
-	ft_strlcpy(str, "-2147483648\0", 12);
+	if (n == 0)
+	{
+		str = malloc(2);
+		str[0] = '0';
+		str[1] = '\0';
+	}
+	else
+	{
+		str = (char *)malloc(12);
+		ft_strlcpy(str, "-2147483648\0", 12);
+	}
 	return (str);
 }
 
@@ -32,7 +41,7 @@ static int	ft_intlen_with_sign(int n)
 		l++;
 	}
 	if (n == 0)
-		return (404);
+		return (1);
 	while (n > 0)
 	{
 		n /= 10;
@@ -71,13 +80,8 @@ char	*ft_itoa(int n)
 	nbr = n;
 	i = 0;
 	len = ft_intlen_with_sign(n);
-	if (len == 404)
-	{
-		str = malloc(2);
-		str[i++] = '0';
-	}
-	if (n == -2147483648)
-		return (ft_int_min_fix());
+	if (n == -2147483648 || n == 0)
+		return (ft_int_min_and_0_fix(n));
 	else if (n != 0)
 		str = (char *)malloc(len + 1);
 	if (n < 0)
@@ -96,5 +100,11 @@ char	*ft_itoa(int n)
 #include <stdio.h>
 int    main()
 {
-	printf("%s", ft_itoa(0));
+	printf("%s\n", ft_itoa(-3123138));
+	printf("%s\n", ft_itoa(323023013));
+	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(-1));
+	printf("%s\n", ft_itoa(42));
+	printf("%s\n", ft_itoa(231));
+	printf("%s\n", ft_itoa(1371));
 }
