@@ -52,4 +52,6 @@ int	ft_atoi(const char *str);
 
 char	*ft_itoa(int n);
 
+void	*ft_calloc(size_t num, size_t size);
+
 #endif
