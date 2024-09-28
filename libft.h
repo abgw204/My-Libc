@@ -50,4 +50,6 @@ void	ft_bzero(void *s, size_t n);
 
 int	ft_atoi(const char *str);
 
+char	*ft_itoa(int n);
+
 #endif
