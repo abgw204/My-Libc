@@ -21,7 +21,12 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(OBJS1)
 	@clear
-	@echo "Library Created :)"
+	@echo "───▄▀▀▀▄▄▄▄▄▄▄▀▀▀▄───"
+	@echo "───█▒▒░░░░░░░░░▒▒█───"
+	@echo "────█░░█░░░░░█░░█────"
+	@echo "─▄▄──█░░░▀█▀░░░█──▄▄─"
+	@echo "█░░█─▀▄░░░░░░░▄▀─█░░█"
+	@echo "Libft was created successfully"
 	@ar -rc $(NAME) $(OBJS) $(OBJS1)
 
 OBJS: $(FUNCTIONS) $(FUNCTIONS)
