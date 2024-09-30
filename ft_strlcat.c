@@ -11,33 +11,40 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <bsd/string.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+/*size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	j;
-	size_t	dst_len;
+	size_t	dlen;
+	size_t	slen;
+	size_t	to_copy;
 
-	i = 0;
-	j = 0;
-	dst_len = ft_strlen(dst) + ft_strlen(src);
-	if (size == 0)
-		return (ft_strlen(src));
-	while (dst[i] != '\0')
-		i++;
-	while (src[j] != '\0' && (i + j) < size)
+	dlen = 0;
+	slen = 0;
+	to_copy = 0;
+	while (dst[dlen] != '\0' && dlen < size)
+		dlen++;
+	if (dlen >= size)
+		return (dlen + ft_strlen(src));
+	while (src[slen] != '\0')
+		slen++;
+	while (src[j] != '\0' && i < size - 1)
 	{
 		dst[i] = src[j];
 		j++;
 		i++;
 	}
 	dst[i] = '\0';
-	return (dst_len);
-}
-/*#include <stdio.h>
+	return (i);
+}*/
+#include <stdio.h>
 int    main(void)
 {
-	char src[] = "good morning";
-	char dest[] = "hello, ";
-	printf("%zu\n%s", ft_strlcat(dest, src, 25), dest);
-}*/
+	//char src[] = "good morning";
+	//char dest[] = "hello, ";
+	char src2[] = "good morning";
+	char dest2[] = "hello";
+	//printf("%zu\n%s\n", ft_strlcat(dest, src, 40), dest);
+	printf("%zu\n%s\n", strlcat(dest2, src2, 3), dest2);
+}
