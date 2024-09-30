@@ -90,12 +90,14 @@ void	ft_transform(char *str, int n, int nbr)
 		str[i++] = '-';
 	str[i] = '\0';
 }
+
 char	*ft_itoa(int n)
 {
-	char    *str;
+	char	*str;
 	int		nbr;
 	int		len;
 
+	str = NULL;
 	nbr = n;
 	len = ft_intlen_with_sign(n);
 	if (n == -2147483648 || n == 0)
