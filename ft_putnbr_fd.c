@@ -1,25 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 09:38:58 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/30 09:39:07 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/08/01 05:08:58 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/08/06 19:21:42 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putnbr(int nb, int fd)
 {
-	while (*s != '\0')
-		write(fd, &*s++, 1);
+	char	c;
+	char	d;
+
+	if (nb == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (nb < 0)
+	{
+		write(fd, "-", 1);
+		nb = nb * -1;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10, fd);
+		d = ((nb % 10) + '0');
+		write(fd, &d, 1);
+	}
+	else
+	{
+		c = (nb + '0');
+		write(fd, &c, 1);
+	}
 }
-/*#include <stdio.h>
-int	main()
+/*int	main(void)
 {
-	ft_putstr_fd("oiieeee", 1);
+	ft_putnbr(32, 1);
 	return (0);
 }*/
