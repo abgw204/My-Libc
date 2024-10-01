@@ -18,6 +18,9 @@ char	*ft_strnstr(const char *big, char *little, size_t size)
 	size_t	k;
 
 	i = 0;
+	k = 0;
+	if (little[k] == '\0')
+		return ((char *)big);
 	while (big[i] != '\0' && i < size)
 	{
 		k = 0;
@@ -35,4 +38,5 @@ char	*ft_strnstr(const char *big, char *little, size_t size)
 int main()
 {
 	printf("%s", ft_strnstr("aaastaaaastaaaaateste123", "sta", 6));
+	printft_strnstr(empty, "", -1) == empty);
 }*/
