@@ -14,6 +14,8 @@
 
 char	*ft_strchr(const char *s1, int c)
 {
+	if (c > 255)
+		return ((char *)s1);
 	while (*s1)
 	{
 		if (*s1 == c)
@@ -27,8 +29,8 @@ char	*ft_strchr(const char *s1, int c)
 /*#include <stdio.h>
 int main()
 {
-	char s1[] = "iiiiiii.iiiii";
-	char s2[] = "iiiiiii.iiiii";
-	printf("%s\n", ft_strchr(s1, '.'));
-	printf("%s\n", strchr(s2, '.'));
+	char s1[] = "tripouille";
+	char s2[] = "tripouille";
+	printf("%d\n", ft_strchr(s1, 't' + 256) == s1);
+	printf("%d\n", strchr(s2, 't' + 256) == s2);
 }*/
