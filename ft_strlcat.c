@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <bsd/string.h>
 
-/*size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	dlen;
@@ -27,24 +27,26 @@
 		dlen++;
 	if (dlen >= size)
 		return (dlen + ft_strlen(src));
-	while (src[slen] != '\0')
-		slen++;
-	while (src[j] != '\0' && i < size - 1)
+	slen = ft_strlen(src);
+	to_copy = size - dlen - 1;
+	if (to_copy > slen)
+		to_copy = slen;
+	i = 0;
+	while (i < to_copy)
 	{
-		dst[i] = src[j];
-		j++;
+		dst[dlen + i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (i);
-}*/
-#include <stdio.h>
+	dst[dlen + to_copy] = '\0';
+	return (dlen + slen);
+}
+/*#include <stdio.h>
 int    main(void)
 {
-	//char src[] = "good morning";
-	//char dest[] = "hello, ";
+	char src[] = "good morning";
+	char dest[] = "hello, ";
 	char src2[] = "good morning";
-	char dest2[] = "hello";
-	//printf("%zu\n%s\n", ft_strlcat(dest, src, 40), dest);
-	printf("%zu\n%s\n", strlcat(dest2, src2, 3), dest2);
-}
+	char dest2[] = "hello, ";
+	printf("%zu\n%s\n", ft_strlcat(dest, src, 40), dest);
+	printf("%zu\n%s\n", strlcat(dest2, src2, 40), dest2);
+}*/

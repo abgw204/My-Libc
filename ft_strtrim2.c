@@ -9,7 +9,7 @@
 /*   Updated: 2024/09/30 09:40:25 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <string.h>
 size_t	len3(char const *s1, char const *set)
 {
 	size_t	i;
@@ -17,6 +17,8 @@ size_t	len3(char const *s1, char const *set)
 	size_t	diff;
 
 	i = 0;
+	k = 0;
+	diff = 0;
 	while (s1[i] != '\0')
 	{
 		k = 0;
@@ -37,12 +39,19 @@ size_t	len3(char const *s1, char const *set)
 			continue ;
 		}
 	}
+	return (i - diff);
 }
-char    *ft_strtrim(char const *s1, char const *set)
+
+/*char    *ft_strtrim(char const *s1, char const *set)
 {
 	char *ptr;
 
 	ptr = (char *)malloc(len3(s1, set) + 1);
 	if (!ptr)
 		return (NULL);
+}*/
+#include <stdio.h>
+int	main()
+{
+	printf("%zu", len3("443333444ooo43oooi4333434", "4o3"));
 }
