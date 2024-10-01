@@ -15,17 +15,22 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
+	size_t	l;
 	char	*ptr;
 
 	i = 0;
+	l = ft_strlen(s);
+	if (start >= l)
+		return (NULL);
+	if (len > l - start)
+		len = l - start;
 	ptr = (char *)malloc(len + 1);
 	if (!ptr)
 		return (NULL);
 	while (i < len)
 	{
-		ptr[i] = s[start];
+		ptr[i] = s[start + i];
 		i++;
-		start++;
 	}
 	ptr[i] = '\0';
 	return (ptr);
@@ -34,5 +39,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 int	main()
 {
 	char s[] = "this is a test";
-	printf("%s", ft_substr(s, 10, 4));
+	printf("%s", ft_substr(s, 10, 3));
 }*/
