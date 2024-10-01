@@ -45,6 +45,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n);
 
 char	*ft_strnstr(const char *big, char *little, size_t size);
 
+char	*ft_strjoin(char const *s1, char const *s2);
+
+char	**ft_split(char const *s, char c);
+
+char	*ft_strtrim(char const *s1, char const *set);
+
 void	*ft_memset(void *s, int c, size_t n);
 
 void	ft_bzero(void *s, size_t n);
@@ -54,5 +60,11 @@ int	ft_atoi(const char *str);
 char	*ft_itoa(int n);
 
 void	*ft_calloc(size_t num, size_t size);
+
+void	ft_putstr_fd(char *s, int fd);
+
+void	ft_putendln_fd(char *s, int fd);
+
+void	ft_putchar_fd(char c, int fd);
 
 #endif
