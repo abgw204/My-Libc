@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 15:42:47 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/10/01 15:42:50 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/10/01 15:44:04 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/10/01 15:44:05 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	s++;
+	char ptr[] = "oi";
+	return (ptr);
 }

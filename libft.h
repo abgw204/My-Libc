@@ -73,9 +73,13 @@ char	*ft_itoa(int n);
 
 void	*ft_calloc(size_t num, size_t size);
 
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
 void	ft_putstr_fd(char *s, int fd);
 
-void	ft_putendln_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
 
 void	ft_putchar_fd(char c, int fd);
 

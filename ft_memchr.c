@@ -32,7 +32,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		return ((char *)str);
 	return (NULL);
 }
-#include <stdio.h>
+/*#include <stdio.h>
 int	main()
 {
 	char s1[] = "";
@@ -45,4 +45,4 @@ int	main()
 
 	printf("%s\n", teste);
 	printf("%s\n", teste2);
-}
+}*/

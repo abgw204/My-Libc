@@ -1,20 +1,18 @@
-char	*str_malloc(char const *s, char c)
-{
-	int	i;
-	size_t	len;
-	size_t	n_of_arrays;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/01 14:23:00 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/10/01 14:23:02 by gada-sil         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	i = -1;
-	len = 0;
-	n_of_arrays = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			n_of_arrays++;
-
-	}
-}
 char	**ft_split(char const *s, char c)
 {
-	
+	char	**ptr = malloc(2 * sizeof(char*));
+	s++;
+	return (ptr);
 }
