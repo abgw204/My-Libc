@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,23 +12,37 @@
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s1, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	while (*s1)
+	const unsigned char	*str;
+	unsigned char	chr;
+	size_t	i;
+
+	str = (unsigned char *)s;
+	chr = (unsigned char)c;
+	i = 0;
+	while (*str != '\0' && i < n - 1)
 	{
-		if (*s1 == c)
-			return ((char *)s1);
-		s1++;
+		if (*str == chr)
+			return ((char *)str);
+		str++;
+		i++;
 	}
-	if ((char)c == '\0')
-		return ((char *)s1);
-	return (0);
+	if (c == '\0')
+		return ((char *)str);
+	return (NULL);
 }
-/*#include <stdio.h>
-int main()
+#include <stdio.h>
+int	main()
 {
-	char s1[] = "iiiiiii.iiiii";
-	char s2[] = "iiiiiii.iiiii";
-	printf("%s\n", ft_strchr(s1, '.'));
-	printf("%s\n", strchr(s2, '.'));
-}*/
+	char s1[] = "";
+	char s2[] = "";
+	char *teste;
+	char *teste2;
+
+	teste = ft_memchr(s1, '.', 10);
+	teste2 = memchr(s2, '.', 10);
+
+	printf("%s\n", teste);
+	printf("%s\n", teste2);
+}

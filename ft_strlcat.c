@@ -47,6 +47,6 @@ int    main(void)
 	char d[] = "hello, ";
 	char s2[] = "good morning";
 	char d2[] = "hello, ";
-	printf("%zu\n%s\n", ft_strlcat(d, s, 10), d);
-	printf("%zu\n%s\n", strlcat(d2, s2, 10), d2);
+	printf("%zu\n%s\n", ft_strlcat(d, s, 20), d);
+	printf("%zu\n%s\n", strlcat(d2, s2, 20), d2);
 }
