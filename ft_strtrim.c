@@ -12,71 +12,64 @@
 
 #include "libft.h"
 
-static int	strlen3(char const *s1, char const *set)
+static int	verify(const char c, const char *set)
 {
 	size_t	i;
-	size_t	k;
-	size_t	j;
 
 	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
+	while (set[i])
 	{
-		k = 0;
-		while (set[k] != '\0')
-		{
-			if (s1[i] == set[k])
-			{
-				j++;
-				break ;
-			}
-			k++;
-		}
+		if (set[i] == c)
+			return (1);
 		i++;
 	}
-	return (i - j);
+	return (0);
 }
 
-static char	*ft_fill(char *ptr, char const *s1, char const *set)
+char	*transform(char *ptr, char *s1, size_t start, size_t end)
 {
 	size_t	i;
-	size_t	k;
-	size_t	pos;
 
 	i = 0;
-	pos = 0;
-	while (s1[i] != '\0')
+	while (start < end)
 	{
-		k = 0;
-		while (set[k] != '\0')
-		{
-			if (s1[i] == set[k])
-			{
-				i++;
-				k = 0;
-				continue ;
-			}
-			k++;
-		}
-		ptr[pos++] = s1[i++];
+		ptr[i] = s1[start];
+		i++;
+		start++;
 	}
+	ptr[i] = '\0';
 	return (ptr);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	size_t		end;
+	size_t		start;
+	size_t		i;
 	char	*ptr;
 
-	ptr = (char *)malloc(strlen3(s1, set) + 1);
+	start = 0;
+	i = 0;
+	end = strlen((char *)s1);
+	if (s1 == NULL || *s1 == '\0')
+        	return ft_strdup("");
+	while (verify(s1[start], set) == 1)
+		start++;
+	while (verify(s1[end - 1], set) == 1)
+		end--;
+	if (start >= end)
+        	return ft_strdup("");
+	ptr = (char *)malloc((end - start) + 1);
 	if (!ptr)
 		return (NULL);
-	ft_fill(ptr, s1, set);
+	transform(ptr, (char *)s1, start, end);
 	return (ptr);
 }
-/*#include <stdio.h>
-int	main()
+
+#include <stdio.h>
+int    main()
 {
-	char s1[] = "hello,$$$$$$ i'm ######very 999999dumb";
-	char set[] = "$#9";
+	char s1[] = "";
+	char set[] = "ada";
 	printf("%s", ft_strtrim(s1, set));
-}*/
+}

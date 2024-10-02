@@ -12,7 +12,5 @@
 
 char	**ft_split(char const *s, char c)
 {
-	char	**ptr = malloc(2 * sizeof(char*));
-	s++;
-	return (ptr);
+
 }
