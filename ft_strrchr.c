@@ -10,8 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *str, int c)
 {
+	if(c > 255)
+		return ((char *)str);
+	if (c == '\0')
+		return ((char *)&str[ft_strlen(str)]);
 	while (*str)
 		str++;
 	str--;
@@ -26,5 +32,6 @@ char	*ft_strrchr(const char *str, int c)
 /*#include <stdio.h>
 int	main(void)
 {
-	printf("%s", ft_strrchr("iiiiii.oooooo.aaaaaaa.ppppp", '.'));
+	printf("Dos cara: %s\n", strrchr("iiiiii.oooooo.aaaaaaa.ppppp", '\0'));
+	printf("Minha: %s", ft_strrchr("iiiiii.oooooo.aaaaaaa.ppppp", '\0'));
 }*/
