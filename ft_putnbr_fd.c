@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb, int fd)
+void	ft_putnbr_fd(int nb, int fd)
 {
 	char	c;
 	char	d;
@@ -29,7 +29,7 @@ void	ft_putnbr(int nb, int fd)
 	}
 	if (nb >= 10)
 	{
-		ft_putnbr(nb / 10, fd);
+		ft_putnbr_fd(nb / 10, fd);
 		d = ((nb % 10) + '0');
 		write(fd, &d, 1);
 	}

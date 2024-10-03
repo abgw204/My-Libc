@@ -65,11 +65,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	transform(ptr, (char *)s1, start, end);
 	return (ptr);
 }
-
-#include <stdio.h>
+/*#include <stdio.h>
+#include <string.h>
 int    main()
 {
-	char s1[] = "";
-	char set[] = "ada";
-	printf("%s", ft_strtrim(s1, set));
-}
+	char	*s = ft_strtrim("   xxxtripxoille   xxx", " x");
+	//printf("%s", s);
+	if ()
+
+}*/
