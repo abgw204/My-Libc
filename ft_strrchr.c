@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	if(c > 255)
+	if (c > 255)
 		return ((char *)str);
 	if (c == '\0')
 		return ((char *)&str[ft_strlen(str)]);
@@ -32,6 +32,6 @@ char	*ft_strrchr(const char *str, int c)
 /*#include <stdio.h>
 int	main(void)
 {
-	printf("Dos cara: %s\n", strrchr("iiiiii.oooooo.aaaaaaa.ppppp", '\0'));
-	printf("Minha: %s", ft_strrchr("iiiiii.oooooo.aaaaaaa.ppppp", '\0'));
+	printf("Theirs: %s\n", strrchr("iiiiii.oooooo.aaaaaaa.ppppp", '\0'));
+	printf("Mine: %s", ft_strrchr("iiiiii.oooooo.aaaaaaa.ppppp", '\0'));
 }*/

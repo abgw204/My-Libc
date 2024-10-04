@@ -36,8 +36,8 @@ OBJS: $(FUNCTIONS) $(FUNCTIONS)
 OBJS1: $(FUNCTIONS) $(FUNCTIONS1)
 	cc $(FLAGS) -c $(FUNCTIONS1)
 clean:
-	@rm $(OBJS) $(OBJS1)
+	rm $(OBJS) $(OBJS1)
 
 fclean:
-	@rm $(OBJS) $(OBJS1) $(NAME)
+	rm $(OBJS) $(OBJS1) $(NAME)
 re: fclean all

@@ -46,19 +46,19 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t		end;
 	size_t		start;
 	size_t		i;
-	char	*ptr;
+	char		*ptr;
 
 	start = 0;
 	i = 0;
 	end = strlen((char *)s1);
 	if (s1 == NULL || *s1 == '\0')
-        	return ft_strdup("");
+		return (ft_strdup(""));
 	while (verify(s1[start], set) == 1)
 		start++;
 	while (verify(s1[end - 1], set) == 1)
 		end--;
 	if (start >= end)
-        	return ft_strdup("");
+		return (ft_strdup(""));
 	ptr = (char *)malloc((end - start) + 1);
 	if (!ptr)
 		return (NULL);

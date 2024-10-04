@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 13:01:54 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/09/23 13:02:02 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/10/04 11:02:41 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/10/04 11:02:43 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+t_list	*ft_lstnew(void *content)
 {
-	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
-		return (1);
-	return (0);
+	t_list	*new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = (NULL);
+	return (new_node);
 }
 /*#include <stdio.h>
-int main ()
+int	main()
 {
-	printf("%d\n", ft_isalpha('3'));
+	t_list	*node;
+	int	i = 42;
+	node = ft_lstnew(&i);
+	printf("%d", *(int *)node->content);
 }*/

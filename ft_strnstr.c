@@ -18,7 +18,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t size)
 	size_t	k;
 	char	*str;
 
-
 	i = 0;
 	k = 0;
 	str = (char *)big;
