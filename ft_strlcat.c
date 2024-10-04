@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <bsd/string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -39,13 +40,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[dlen + to_copy] = '\0';
 	return (dlen + slen);
 }
-/*#include <stdio.h>
+#include <stdio.h>
 int    main(void)
 {
-	char s[] = "good morning";
-	char d[] = "hello, ";
-	char s2[] = "good morning";
-	char d2[] = "hello, ";
-	printf("%zu\n%s\n", ft_strlcat(d, s, 20), d);
-	printf("%zu\n%s\n", strlcat(d2, s2, 20), d2);
-}*/
+	char s[] = "world";
+	char d[] = "hello";
+	char s2[] = "world";
+	char d2[] = "hello";
+	printf("%zu\n%s\n", ft_strlcat(d, s, 10), d);
+	printf("%zu\n%s\n", strlcat(d2, s2, 10), d2);
+}
