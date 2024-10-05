@@ -34,11 +34,11 @@ int	main(void)
 	char src[] = "Hello World";
 	char dest[15];
 	char dest2[15];
-	printf("%zu\n", ft_strlcpy(dest, src, 5));
+	printf("%zu\n", ft_strlcpy(dest, src, 3));
 
 	printf("%s\n", dest);
 
-	printf("%zu\n", strlcpy(dest2, src, 5));
+	printf("%zu\n", strlcpy(dest2, src, 3));
 
 	printf("%s\n", dest2);
 }*/
