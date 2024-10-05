@@ -26,7 +26,7 @@ static int	verify(const char c, const char *set)
 	return (0);
 }
 
-char	*transform(char *ptr, char *s1, size_t start, size_t end)
+static char	*transform(char *ptr, char *s1, size_t start, size_t end)
 {
 	size_t	i;
 
@@ -69,8 +69,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 #include <string.h>
 int    main()
 {
-	char	*s = ft_strtrim("   xxxtripxoille   xxx", " x");
-	//printf("%s", s);
-	if ()
+	char	*s = ft_strtrim("   xxxhixxx    ", " x");
+	printf("%s", s);
 
 }*/
