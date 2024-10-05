@@ -30,8 +30,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 /*#include <stdio.h>
 int	main(void)
 {
-	char oi1[] = "oieeee";
-	char oi2[] = "eeeee";
+	char oi1[] = "hello";
+	char oi2[] = "ooooo";
 	char	*oi_final = ft_memmove(oi1, oi2, 5);
 	//char	*oi_final2 = memmove(oi1, oi2, 5);
 	printf("%s", oi_final);
