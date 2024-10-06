@@ -39,10 +39,10 @@ OBJS: $(FUNCTIONS)
 OBJS1: $(FUNCTIONS1)
 	cc $(FLAGS) -c $(FUNCTIONS1)
 clean:
-	rm $(OBJS) $(OBJS1)
+	rm $(OBJS) $(OBJS1) $(BONUS_OBJS)
 
 fclean:
-	rm $(OBJS) $(OBJS1) $(NAME)
+	rm $(OBJS) $(OBJS1) $(NAME) $(BONUS_OBJS)
 re: fclean all
 
 bonus: $(BONUS)
