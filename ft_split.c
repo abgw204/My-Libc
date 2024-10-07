@@ -76,6 +76,20 @@ static void	transform(char **array, char const *s, char c)
 	}
 }
 
+static char	**verify(char **array, size_t i)
+{
+	size_t	j;
+
+	j = 0;
+	while (j < i)
+	{
+		free(array[j]);
+		j++;
+	}
+	free(array);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char		**array;
@@ -88,18 +102,18 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	index = 0;
 	strings = count_words(s, c);
-	array = (char **)malloc((strings + 1) * sizeof(char *));
+	array = malloc((strings + 1) * sizeof(char *));
 	if (!s || !array)
 		return (NULL);
 	while (i < strings)
 	{
 		size = find_size(s, c, &index);
 		array[i] = (char *)calloc(size + 1, 1);
-		if (!array[i++])
-			return (NULL);
+		if (!array[i])
+			return (verify(array, i));
+		i++;
 	}
 	transform(array, s, c);
-	array[i] = (char *)malloc(1);
 	array[i] = NULL;
 	return (array);
 }
