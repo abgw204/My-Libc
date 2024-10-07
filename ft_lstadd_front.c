@@ -19,8 +19,8 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
-
-/*int	main()
+/*#include <stdio.h>
+int	main()
 {
 	t_list *head = NULL;
 
