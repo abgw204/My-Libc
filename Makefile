@@ -58,6 +58,9 @@ fclean:
 
 re: fclean all
 
+BONUS_OBJS: $(BONUS_FUNCTIONS)
+	cc $(FLAGS) -c $(BONUS_FUNCTIONS)
+
 bonus: $(OBJS) $(BONUS_OBJS)
 	@clear
 	@ar -rc $(NAME) $(OBJS) $(BONUS_OBJS)
