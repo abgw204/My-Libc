@@ -93,19 +93,18 @@ static char	**verify(char **array, size_t i)
 char	**ft_split(char const *s, char c)
 {
 	char		**array;
-	size_t		strings;
 	size_t		i;
 	size_t		size;
 	int			index;
 
-	size = 0;
 	i = 0;
 	index = 0;
-	strings = count_words(s, c);
-	array = malloc((strings + 1) * sizeof(char *));
-	if (!s || !array)
+	if (!s)
 		return (NULL);
-	while (i < strings)
+	array = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!array)
+		return (NULL);
+	while (i < count_words(s, c))
 	{
 		size = find_size(s, c, &index);
 		array[i] = (char *)calloc(size + 1, 1);
@@ -122,9 +121,5 @@ int    main()
 {
 	char    **ptr;
 
-	ptr = ft_split("  tripouille  42  ", ' ');
-	if (ptr[2] == NULL)
-		printf("DEU BOM");
-	else
-		printf("DEU RUIM");
+	ptr = ft_split(0, ' ');
 }*/

@@ -18,67 +18,26 @@ ft_strrchr.o ft_strnstr.o ft_substr.o ft_calloc.o ft_putchar_fd.o ft_memchr.o \
 ft_memcpy.o ft_memmove.o ft_bzero.o ft_strlcat.o ft_split.o ft_striteri.o \
 ft_strmapi.o ft_putendl_fd.o
 
-BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstadd_back_bonus.c ft_lstlast_bonus.c ft_lstsize_bonus.c ft_lstdelone_bonus.c
+BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstadd_back_bonus.c ft_lstlast_bonus.c \
+ft_lstsize_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c
 
-BONUS_OBJS = ft_lstnew_bonus.o ft_lstadd_front_bonus.o ft_lstadd_back_bonus.o ft_lstlast_bonus.o ft_lstsize_bonus.o ft_lstdelone_bonus.o
+BONUS_OBJS = ft_lstnew_bonus.o ft_lstadd_front_bonus.o ft_lstadd_back_bonus.o ft_lstlast_bonus.o \
+ft_lstsize_bonus.o ft_lstdelone_bonus.o ft_lstclear_bonus.o ft_lstiter_bonus.o
 
 NAME = libft.a
 
+.c.o:
+	cc $(FLAGS) -c $< -o $(<:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@clear
-	@ar -rc $(NAME) $(OBJS)
-	@echo "\033[40;40m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\033[0m"
-	@echo "\033[40;40m░░░░░░░▄▄▀▀▀▀▀▀▀▀▀▀▄▄█▄░░░░▄░░░░█░░░░░░░\033[0m"
-	@echo "\033[40;40m░░░░░░█▀░░░░░░░░░░░░░▀▀█▄░░░▀░░░░░░░░░▄░\033[0m"
-	@echo "\033[40;40m░░░░▄▀░░░░░░░░░░░░░░░░░▀██░░░▄▀▀▀▄▄░░▀░░\033[0m"
-	@echo "\033[40;40m░░▄█▀▄█▀▀▀▀▄░░░░░░▄▀▀█▄░▀█▄░░█▄░░░▀█░░░░\033[0m"
-	@echo "\033[40;40m░▄█░▄▀░░▄▄▄░█░░░▄▀▄█▄░▀█░░█▄░░▀█░░░░█░░░\033[0m"
-	@echo "\033[40;40m▄█░░█░░░▀▀▀░█░░▄█░▀▀▀░░█░░░█▄░░█░░░░█░░░\033[0m"
-	@echo "\033[40;40m██░░░▀▄░░░▄█▀░░░▀▄▄▄▄▄█▀░░░▀█░░█▄░░░█░░░\033[0m"
-	@echo "\033[40;40m██░░░░░▀▀▀░░░░░░░░░░░░░░░░░░█░▄█░░░░█░░░\033[0m"
-	@echo "\033[40;40m██░░░░░░░░░░░░░░░░░░░░░█░░░░██▀░░░░█▄░░░\033[0m"
-	@echo "\033[40;40m██░░░░░░░░░░░░░░░░░░░░░█░░░░█░░░░░░░▀▀█▄\033[0m"
-	@echo "\033[40;40m██░░░░░░░░░░░░░░░░░░░░█░░░░░█░░░░░░░▄▄██\033[0m"
-	@echo "\033[40;40m░██░░░░░░░░░░░░░░░░░░▄▀░░░░░█░░░░░░░▀▀█▄\033[0m"
-	@echo "\033[40;40m░▀█░░░░░░█░░░░░░░░░▄█▀░░░░░░█░░░░░░░▄▄██\033[0m"
-	@echo "\033[40;40m░▄██▄░░░░░▀▀▀▄▄▄▄▀▀░░░░░░░░░█░░░░░░░▀▀█▄\033[0m"
-	@echo "\033[40;40m░░▀▀▀▀░░░░░░░░░░░░░░░░░░░░░░█▄▄▄▄▄▄▄▄▄██\033[0m"
-	@echo "\033[40;40m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\033[0m"
-	@echo "\033[46mLibft was created succesfully!\033[0m"
-
-OBJS: $(FUNCTIONS)
-	cc $(FLAGS) -c $(FUNCTIONS)
+	ar -rc $(NAME) $(OBJS)
 clean:
 	rm $(OBJS) $(BONUS_OBJS)
-
 fclean:
 	rm $(OBJS) $(NAME) $(BONUS_OBJS)
 
 re: fclean all
 
-BONUS_OBJS: $(BONUS_FUNCTIONS)
-	cc $(FLAGS) -c $(BONUS_FUNCTIONS)
-
 bonus: $(OBJS) $(BONUS_OBJS)
-	@clear
-	@ar -rc $(NAME) $(OBJS) $(BONUS_OBJS)
-	@echo "\033[40;40m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\033[0m"
-	@echo "\033[40;40m░░░░░░░▄▄▀▀▀▀▀▀▀▀▀▀▄▄█▄░░░░▄░░░░█░░░░░░░\033[0m"
-	@echo "\033[40;40m░░░░░░█▀░░░░░░░░░░░░░▀▀█▄░░░▀░░░░░░░░░▄░\033[0m"
-	@echo "\033[40;40m░░░░▄▀░░░░░░░░░░░░░░░░░▀██░░░▄▀▀▀▄▄░░▀░░\033[0m"
-	@echo "\033[40;40m░░▄█▀▄█▀▀▀▀▄░░░░░░▄▀▀█▄░▀█▄░░█▄░░░▀█░░░░\033[0m"
-	@echo "\033[40;40m░▄█░▄▀░░▄▄▄░█░░░▄▀▄█▄░▀█░░█▄░░▀█░░░░█░░░\033[0m"
-	@echo "\033[40;40m▄█░░█░░░▀▀▀░█░░▄█░▀▀▀░░█░░░█▄░░█░░░░█░░░\033[0m"
-	@echo "\033[40;40m██░░░▀▄░░░▄█▀░░░▀▄▄▄▄▄█▀░░░▀█░░█▄░░░█░░░\033[0m"
-	@echo "\033[40;40m██░░░░░▀▀▀░░░░░░░░░░░░░░░░░░█░▄█░░░░█░░░\033[0m"
-	@echo "\033[40;40m██░░░░░░░░░░░░░░░░░░░░░█░░░░██▀░░░░█▄░░░\033[0m"
-	@echo "\033[40;40m██░░░░░░░░░░░░░░░░░░░░░█░░░░█░░░░░░░▀▀█▄\033[0m"
-	@echo "\033[40;40m██░░░░░░░░░░░░░░░░░░░░█░░░░░█░░░░░░░▄▄██\033[0m"
-	@echo "\033[40;40m░██░░░░░░░░░░░░░░░░░░▄▀░░░░░█░░░░░░░▀▀█▄\033[0m"
-	@echo "\033[40;40m░▀█░░░░░░█░░░░░░░░░▄█▀░░░░░░█░░░░░░░▄▄██\033[0m"
-	@echo "\033[40;40m░▄██▄░░░░░▀▀▀▄▄▄▄▀▀░░░░░░░░░█░░░░░░░▀▀█▄\033[0m"
-	@echo "\033[40;40m░░▀▀▀▀░░░░░░░░░░░░░░░░░░░░░░█▄▄▄▄▄▄▄▄▄██\033[0m"
-	@echo "\033[40;40m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\033[0m"
-	@echo "\033[46mLibft was created succesfully!\033[0m"
+	ar -rc $(NAME) $(OBJS) $(BONUS_OBJS)

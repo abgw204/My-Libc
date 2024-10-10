@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/06 15:21:11 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/10/06 15:21:12 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/10/10 11:31:42 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/10/10 11:31:43 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (lst == NULL || new == NULL)
+	if (!lst)
 		return ;
-	new->next = *lst;
-	*lst = new;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
-/*#include <stdio.h>
+/*void	plus1(void *content)
+{
+	*(int *)content = *(int *)content + 1;
+}
+
+#include <stdio.h>
 int    main()
 {
 	int    i = 42;
@@ -30,8 +38,14 @@ int    main()
 	t_list *node = ft_lstnew(&k);
 
 	head->next = ft_lstnew(&j);
-	ft_lstadd_front(&head, node);
+	ft_lstadd_back(&head, node);
 	printf("%d\n", *(int *)head->content);
 	printf("%d\n", *(int *)head->next->content);
-	printf("%d\n", *(int *)head->next->next->content);    
+	printf("%d\n", *(int *)head->next->next->content);
+	
+	ft_lstiter(head, plus1);
+
+	printf("\n%d\n", *(int *)head->content);
+	printf("%d\n", *(int *)head->next->content);
+	printf("%d\n", *(int *)head->next->next->content);
 }*/

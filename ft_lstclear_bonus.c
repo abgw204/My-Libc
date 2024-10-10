@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gada-sil <gada-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/06 15:21:11 by gada-sil          #+#    #+#             */
-/*   Updated: 2024/10/06 15:21:12 by gada-sil         ###   ########.fr       */
+/*   Created: 2024/10/09 16:10:42 by gada-sil          #+#    #+#             */
+/*   Updated: 2024/10/09 16:10:43 by gada-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (lst == NULL || new == NULL)
+	t_list	*aux;
+
+	if (!*lst || !del)
 		return ;
-	new->next = *lst;
-	*lst = new;
+	while (*lst)
+	{
+		aux = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = aux;
+	}
+	*lst = NULL;
 }
-/*#include <stdio.h>
+
+/*void	del(void *content)
+{
+	free(content);
+}
+
+#include <stdio.h>
 int    main()
 {
 	int    i = 42;
@@ -30,8 +43,14 @@ int    main()
 	t_list *node = ft_lstnew(&k);
 
 	head->next = ft_lstnew(&j);
-	ft_lstadd_front(&head, node);
+	ft_lstadd_back(&head, node);
 	printf("%d\n", *(int *)head->content);
 	printf("%d\n", *(int *)head->next->content);
-	printf("%d\n", *(int *)head->next->next->content);    
+	printf("%d\n", *(int *)head->next->next->content);
+	
+	ft_lstclear(&head, del);
+
+	printf("%d\n", *(int *)head->content);
+	printf("%d\n", *(int *)head->next->content);
+	printf("%d\n", *(int *)head->next->next->content);
 }*/
