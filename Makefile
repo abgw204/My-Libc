@@ -33,9 +33,9 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar -rc $(NAME) $(OBJS)
 clean:
-	rm $(OBJS) $(BONUS_OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 fclean:
-	rm $(OBJS) $(NAME) $(BONUS_OBJS)
+	rm -f $(OBJS) $(NAME) $(BONUS_OBJS)
 
 re: fclean all
 

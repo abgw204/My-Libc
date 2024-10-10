@@ -61,8 +61,6 @@ static char	*ft_reverse(char *str, int len)
 
 	i = 0;
 	len -= 1;
-	if (str[i] == '0' || str == NULL)
-		return (str);
 	while (i < len)
 	{
 		temp = str[i];
@@ -74,7 +72,7 @@ static char	*ft_reverse(char *str, int len)
 	return (str);
 }
 
-void	ft_transform(char *str, int n, int nbr)
+static void	ft_transform(char *str, int n, int nbr)
 {
 	int	i;
 
@@ -115,11 +113,6 @@ char	*ft_itoa(int n)
 /*#include <stdio.h>
 int    main()
 {
-	printf("%s\n", ft_itoa(-3123138));
-	printf("%s\n", ft_itoa(2147483647));
-	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(-1));
-	printf("%s\n", ft_itoa(42));
-	printf("%s\n", ft_itoa(231));
-	printf("%s\n", ft_itoa(-2147483648));
+	printf("%s\n", ft_itoa(10));
+	printf("%s", ft_itoa(-10));
 }*/

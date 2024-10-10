@@ -17,7 +17,7 @@ int	ft_atoi(const char *str)
 
 	res = 0;
 	sign = 1;
-	while (*str <= ' ')
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	if (!(*str >= '0' && *str <= '9'))
 	{
@@ -35,6 +35,6 @@ int	ft_atoi(const char *str)
 #include <stdlib.h>
 int main()
 {
-	printf("%d\n", ft_atoi("+76"));
-	printf("%d", atoi("+76"));
+	printf("%d\n", ft_atoi("\e76"));
+	printf("%d", atoi("\e76"));
 }*/
