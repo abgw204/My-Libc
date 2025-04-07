@@ -1,6 +1,6 @@
-# Libc - Standard C Library Recreation
+# Libft - Standard C Library Recreation
 
-This library reimplements several functions from the standard C library, along with helper functions for handling strings, memory, and linked lists. It was developed to improve my proficiency in C programming.
+This library reimplements several functions from the standard C library, along with helper functions for handling strings, memory, and linked lists. It was developed as part of the 42 school curriculum to improve proficiency in C programming.
 
 ## 🧠 Conversion Functions
 

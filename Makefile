@@ -24,7 +24,7 @@ src/ft_lstsize_bonus.c src/ft_lstdelone_bonus.c src/ft_lstclear_bonus.c src/ft_l
 BONUS_OBJS = src/ft_lstnew_bonus.o src/ft_lstadd_front_bonus.o src/ft_lstadd_back_bonus.o src/ft_lstlast_bonus.o \
 src/ft_lstsize_bonus.o src/ft_lstdelone_bonus.o src/ft_lstclear_bonus.o src/ft_lstiter_bonus.o
 
-NAME = libc.a
+NAME = libft.a
 
 .c.o:
 	cc $(FLAGS) -c $< -o $(<:.c=.o)

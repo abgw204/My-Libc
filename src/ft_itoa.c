@@ -1,4 +1,4 @@
-#include "libc.h"
+#include "libft.h"
 
 static char	*ft_int_min_and_0_fix(int n)
 {
